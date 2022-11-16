@@ -69,7 +69,7 @@ export function Details() {
       />
       {
         poolDetails._count?.participants > 0 ?
-        <VStack px={5} flex={1}>
+        <VStack px={5} flex={1} marginBottom={24}>
           <PoolHeader data={poolDetails} />
           <HStack bgColor="gray.800" p={1} rounded="sm" mb={5} >
             <Option 
@@ -81,10 +81,9 @@ export function Details() {
               title='Ranking do grupo' 
               isSelected={optionSelected === 'ranking'} 
               onPress={() => setOptionSelected('ranking')}
-            /> 
-            <Guesses poolId={poolDetails.id} />
+            />           
           </HStack>
-
+          <Guesses poolId={poolDetails.id} />
         </VStack>
         :
         <EmptyMyPoolList code={ poolDetails.code }  />
